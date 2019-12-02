@@ -1,5 +1,7 @@
+**The idea is inspired by the following project:**
 
 # vuetify-todo-pwa
+
 This project is a simple Todo [PWA] (Progressive Web App) inspired by [TodoMVC]. Perfect to learn the basics about [Vue.js], [Vuex] and [Vuetify] technologies.
 
 [PWA]: https://developers.google.com/web/progressive-web-apps
@@ -68,24 +70,22 @@ cd vuetify-todo-pwa
 
 ### Install dependencies
 ```
-npm install
+yarn install
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+yarn serve
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+yarn build
 ```
 
 ### Lints and fixes files
 ```
-npm run lint
+yarn lint
 ```
-## Donation
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GNML9U2XC2JR6&source=url)
 ## License
 [MIT](./LICENSE) &copy; davidgaroro
