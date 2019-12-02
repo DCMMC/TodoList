@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  db:
+    image: mongo:latest
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      # - MONGODB_USER="user"
+      # - MONGODB_PASS="pass"
+    volumes:
+      - ./mongo_db:/data/db
+    ports:
+      - 27017:27017
+    command: mongod
+    restart: on-failure
+    # macOS compatiable
+    network_mode: host
+
+  demo:
+    restart: on-failure
+    build: ./todolist
+    image: todolist:latest
+    environment:
+      DJANGO_MANAGEPY_MIGRATE: "on"
+      DJANGO_MANAGEPY_COLLECTSTATIC: "on"
+    command: bash -c "python3 -m pipenv run python ./todolist/manage.py runserver 0.0.0.0:8080 --insecure"
+    network_mode: host
+    volumes:
+      - ./todolist:/project/todolist
+    ports:
+      - 8080:8080
+    depends_on:
+    # links:
+      - db
