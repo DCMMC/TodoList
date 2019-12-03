@@ -58,7 +58,6 @@
               <v-navigation-drawer
                 v-model="drawer"
                 absolute
-                bottom
                 temporary
               >
                 <v-list
@@ -330,6 +329,14 @@ export default {
       }
     },
     settingGroup () {
+      if (this.groups[this.current_group] === 'All' ||
+        this.current_group === 0) {
+          this.snackmsg = 'Cannot edit the group "All"'
+          this.ifRemoveGroup = false
+          this.newGroupName = this.groups[this.current_group] || 'All'
+          this.snackbar = true
+          return
+        }
       if (this.ifRemoveGroup) {
         const grpName = this.groups[this.current_group]
         this.removeGroup(grpName)
