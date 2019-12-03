@@ -12,7 +12,7 @@
                 prominent
               >
                 <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-                <v-toolbar-title class="headline">
+                <v-toolbar-title class="title">
                   Todo App - {{ groups[current_group] }}
                 </v-toolbar-title>
 

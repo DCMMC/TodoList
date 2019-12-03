@@ -12,7 +12,6 @@
                 <v-text-field
                   :label="'New todo input'"
                   @keydown.enter="addOneTodo"
-                  autofocus
                   dense
                   autocomplete="off"
                   clearable
