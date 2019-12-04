@@ -9,7 +9,7 @@ fi
 
 if [ "x$DJANGO_MANAGEPY_COLLECTSTATIC" = 'xon' ]; then
     echo 'collect static'
-    cd ./todolist/db_frontend && yarn install && yarn run build && cd -
+    cd ./todolist/frontend && yarn install && yarn run build && cd -
     pipenv run ./todolist/manage.py collectstatic --noinput
 fi
 
